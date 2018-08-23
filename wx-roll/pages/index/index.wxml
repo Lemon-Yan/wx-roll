@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="contain">
+  <!--轮播图-->
+  <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for-items="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 滚动部分 -->
+  <view class='gundong-section'>
+    <image src="../../images/round-g.gif"></image>
+    <view class="swiperview swiper-position">
+      <swiper class="swiperitem" indicator-dots="true" autoplay="{{autoplay}}" vertical="true" circular="true">
+        <block wx:for="{{rollData}}">
+          <swiper-item>
+            <text class="swiper-txt">{{item}}</text>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <!-- 当前城市 -->
+  <view class="swiperview2">
+    <image src="../../images/position.png"></image>
+    <view class="swiperitem" vertical="true">
+      <text class="swiper-txt">位置：{{currentAddress}}</text>
+    </view>
+  </view>
+</view>
